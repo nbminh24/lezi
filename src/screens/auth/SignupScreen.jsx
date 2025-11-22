@@ -21,7 +21,7 @@ const SignupScreen = ({ onNavigateToLogin }) => {
     return (
         <div className="min-h-screen bg-[#F9FAFB] flex items-center justify-center p-6">
             {/* Main Card Container */}
-            <div className="w-full max-w-md bg-white rounded-[40px] shadow-[0_30px_60px_-10px_rgba(0,0,0,0.08)] p-8">
+            <div className="w-full max-w-[420px] bg-white rounded-[40px] shadow-[0_30px_60px_-10px_rgba(0,0,0,0.08)] p-8">
 
                 {/* Mascot Image */}
                 <div className="flex justify-center mb-8">

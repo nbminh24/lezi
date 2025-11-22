@@ -20,7 +20,7 @@ const LoginScreen = ({ onNavigateToSignup }) => {
     return (
         <div className="min-h-screen bg-[#F9FAFB] flex items-center justify-center p-6">
             {/* Main Card Container */}
-            <div className="w-full max-w-md bg-white rounded-[40px] shadow-[0_30px_60px_-10px_rgba(0,0,0,0.08)] p-8">
+            <div className="w-full max-w-[420px] bg-white rounded-[40px] shadow-[0_30px_60px_-10px_rgba(0,0,0,0.08)] p-8">
 
                 {/* Mascot Image */}
                 <div className="flex justify-center mb-8">
@@ -42,7 +42,7 @@ const LoginScreen = ({ onNavigateToSignup }) => {
                 </p>
 
                 {/* Form */}
-                <div className="space-y-4 mb-6">
+                <div className="space-y-4 mb-6 mt-2">
                     <SoftInput
                         type="email"
                         placeholder="Email address"
@@ -61,11 +61,14 @@ const LoginScreen = ({ onNavigateToSignup }) => {
                 </div>
 
                 {/* Forgot Password Link */}
-                <div className="text-right mb-6">
+                <div className="text-right mb-8">
                     <button className="text-[14px] font-medium text-blue-600 hover:text-blue-700 transition-colors">
                         Forgot password?
                     </button>
                 </div>
+
+                {/* Spacer for alignment with Signup */}
+                <div className="h-[44px] mb-6"></div>
 
                 {/* Login Button */}
                 <div className="mb-4">
