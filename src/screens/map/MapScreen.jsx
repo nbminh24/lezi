@@ -76,8 +76,8 @@ const MapScreen = ({ onNavigate }) => {
             <TopBar streak={3} gems={250} hearts={5} />
 
             {/* Main Content - Scrollable Path */}
-            <div className="px-6 pb-32 overflow-y-auto">
-                <h1 className="text-[28px] font-bold text-[#1a1a1a] mb-6 mt-2">
+            <div className="px-6 pt-[80px] pb-32 overflow-y-auto">
+                <h1 className="text-[28px] font-bold text-[#1a1a1a] mb-6">
                     Learning Path
                 </h1>
 

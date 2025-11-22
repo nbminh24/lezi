@@ -3,8 +3,8 @@ import { Fire, Lightning, Heart } from 'phosphor-react';
 
 const TopBar = ({ streak = 3, gems = 250, hearts = 5 }) => {
     return (
-        <div className="sticky top-0 z-40 bg-[#F9FAFB] pt-6 pb-4 px-6">
-            <div className="flex items-center justify-between">
+        <div className="absolute top-0 left-0 right-0 z-40 h-[70px] bg-white/80 backdrop-blur-md border-b border-gray-100">
+            <div className="flex items-center justify-between h-full px-6">
                 {/* Logo/Title */}
                 <h1 className="text-[24px] font-bold text-[#1a1a1a]">Lezi</h1>
 

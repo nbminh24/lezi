@@ -31,8 +31,8 @@ const DashboardScreen = ({ onNavigate }) => {
             {/* Top Bar with Stats */}
             <TopBar streak={3} gems={250} hearts={5} />
 
-            {/* Main Content - Bento Grid with bottom padding for navbar */}
-            <div className="px-6 pb-32 space-y-6 overflow-y-auto">
+            {/* Main Content - Bento Grid with padding for fixed header and navbar */}
+            <div className="px-6 pt-[80px] pb-32 space-y-6 overflow-y-auto">
                 {/* Hero: Daily Progress */}
                 <DailyProgressCard
                     currentXP={15}
