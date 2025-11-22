@@ -1,11 +1,11 @@
 import React from 'react';
-import { SignIn, UserPlus, User, NumberCircleOne, NumberCircleTwo, NumberCircleThree } from 'phosphor-react';
+import { SignIn, UserPlus, House, NumberCircleOne, NumberCircleTwo, NumberCircleThree } from 'phosphor-react';
 
 const DevTab = ({ currentScreen, onScreenChange }) => {
     const authScreens = [
         { id: 'login', label: 'Login', icon: SignIn },
         { id: 'signup', label: 'Signup', icon: UserPlus },
-        { id: 'profile', label: 'Profile', icon: User },
+        { id: 'dashboard', label: 'Home', icon: House },
     ];
 
     const onboardingScreens = [

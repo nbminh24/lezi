@@ -4,6 +4,7 @@ import SignupScreen from './screens/auth/SignupScreen';
 import InterestScreen from './screens/onboarding/InterestScreen';
 import GoalScreen from './screens/onboarding/GoalScreen';
 import LevelScreen from './screens/onboarding/LevelScreen';
+import DashboardScreen from './screens/home/DashboardScreen';
 import PhoneFrame from './components/PhoneFrame';
 import ProfileCard from './components/ProfileCard';
 import DevTab from './components/dev/DevTab';
@@ -20,7 +21,7 @@ function App() {
         else if (step === 2) setCurrentScreen('onboard3');
         else if (step === 3) {
             console.log('Onboarding complete:', { ...onboardingData, ...data });
-            setCurrentScreen('profile'); // Or navigate to home screen
+            setCurrentScreen('dashboard'); // Navigate to dashboard
         }
     };
 
@@ -54,7 +55,11 @@ function App() {
                     />
                 );
 
-            // Profile
+            // Dashboard (Home)
+            case 'dashboard':
+                return <DashboardScreen />;
+
+            // Profile (Old demo)
             case 'profile':
                 return (
                     <PhoneFrame>
