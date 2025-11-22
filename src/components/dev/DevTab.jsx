@@ -1,5 +1,5 @@
 import React from 'react';
-import { SignIn, UserPlus, House, NumberCircleOne, NumberCircleTwo, NumberCircleThree, Image, TextAa, TextAlignLeft, Shuffle, SpeakerHigh, ArrowsLeftRight, TextT, Keyboard, ChatCircleDots } from 'phosphor-react';
+import { SignIn, UserPlus, House, NumberCircleOne, NumberCircleTwo, NumberCircleThree, Image, TextAa, TextAlignLeft, Shuffle, SpeakerHigh, ArrowsLeftRight, TextT, Keyboard, ChatCircleDots, CheckSquare, UsersThree, MicrophoneStage, Newspaper, Trophy } from 'phosphor-react';
 
 const DevTab = ({ currentScreen, onScreenChange }) => {
     const authScreens = [
@@ -24,6 +24,11 @@ const DevTab = ({ currentScreen, onScreenChange }) => {
         { id: 'fillBlank', label: 'Q: Fill', icon: TextT },
         { id: 'listeningType', label: 'Q: Type', icon: Keyboard },
         { id: 'dialogue', label: 'Q: Chat', icon: ChatCircleDots },
+        { id: 'trueFalse', label: 'Q: T/F', icon: CheckSquare },
+        { id: 'roleplay', label: 'Q: Roleplay', icon: UsersThree },
+        { id: 'vocabSpeaking', label: 'Q: Speak', icon: MicrophoneStage },
+        { id: 'realWorld', label: 'Q: Context', icon: Newspaper },
+        { id: 'lessonComplete', label: 'End Screen', icon: Trophy },
     ];
 
     return (

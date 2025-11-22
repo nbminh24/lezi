@@ -15,6 +15,11 @@ import ImageToTextScreen from './screens/learning/types/ImageToTextScreen';
 import FillBlankScreen from './screens/learning/types/FillBlankScreen';
 import ListeningTypeScreen from './screens/learning/types/ListeningTypeScreen';
 import DialogueScreen from './screens/learning/types/DialogueScreen';
+import TrueFalseScreen from './screens/learning/types/TrueFalseScreen';
+import RoleplayScreen from './screens/learning/types/RoleplayScreen';
+import VocabSpeakingScreen from './screens/learning/types/VocabSpeakingScreen';
+import RealWorldScreen from './screens/learning/types/RealWorldScreen';
+import LessonCompleteScreen from './screens/learning/LessonCompleteScreen';
 import PhoneFrame from './components/PhoneFrame';
 import ProfileCard from './components/ProfileCard';
 import DevTab from './components/dev/DevTab';
@@ -178,6 +183,62 @@ function App() {
                             console.log('Answer:', isCorrect ? 'Correct' : 'Wrong');
                             // TODO: Navigate to next question
                         }}
+                    />
+                );
+
+            // Learning - True/False Question
+            case 'trueFalse':
+                return (
+                    <TrueFalseScreen
+                        onBack={() => setCurrentScreen('dashboard')}
+                        onComplete={(isCorrect) => {
+                            console.log('Answer:', isCorrect ? 'Correct' : 'Wrong');
+                            // TODO: Navigate to next question
+                        }}
+                    />
+                );
+
+            // Learning - Roleplay Question
+            case 'roleplay':
+                return (
+                    <RoleplayScreen
+                        onBack={() => setCurrentScreen('dashboard')}
+                        onComplete={(isCorrect) => {
+                            console.log('Speaking complete!');
+                            // TODO: Navigate to next question
+                        }}
+                    />
+                );
+
+            // Learning - Vocabulary Speaking Question
+            case 'vocabSpeaking':
+                return (
+                    <VocabSpeakingScreen
+                        onBack={() => setCurrentScreen('dashboard')}
+                        onComplete={(isCorrect) => {
+                            console.log('Pronunciation complete!');
+                            // TODO: Navigate to next question
+                        }}
+                    />
+                );
+
+            // Learning - Real World Context Question
+            case 'realWorld':
+                return (
+                    <RealWorldScreen
+                        onBack={() => setCurrentScreen('dashboard')}
+                        onComplete={(isCorrect) => {
+                            console.log('Answer:', isCorrect ? 'Correct' : 'Wrong');
+                            // TODO: Navigate to next question
+                        }}
+                    />
+                );
+
+            // Learning - Lesson Complete Screen
+            case 'lessonComplete':
+                return (
+                    <LessonCompleteScreen
+                        onContinue={() => setCurrentScreen('dashboard')}
                     />
                 );
 
