@@ -13,6 +13,7 @@ import PairMatchScreen from './screens/learning/types/PairMatchScreen';
 import ListeningScreen from './screens/learning/types/ListeningScreen';
 import ImageToTextScreen from './screens/learning/types/ImageToTextScreen';
 import FillBlankScreen from './screens/learning/types/FillBlankScreen';
+import ListeningTypeScreen from './screens/learning/types/ListeningTypeScreen';
 import PhoneFrame from './components/PhoneFrame';
 import ProfileCard from './components/ProfileCard';
 import DevTab from './components/dev/DevTab';
@@ -147,6 +148,18 @@ function App() {
             case 'fillBlank':
                 return (
                     <FillBlankScreen
+                        onBack={() => setCurrentScreen('dashboard')}
+                        onComplete={(isCorrect) => {
+                            console.log('Answer:', isCorrect ? 'Correct' : 'Wrong');
+                            // TODO: Navigate to next question
+                        }}
+                    />
+                );
+
+            // Learning - Listening & Typing Question
+            case 'listeningType':
+                return (
+                    <ListeningTypeScreen
                         onBack={() => setCurrentScreen('dashboard')}
                         onComplete={(isCorrect) => {
                             console.log('Answer:', isCorrect ? 'Correct' : 'Wrong');
