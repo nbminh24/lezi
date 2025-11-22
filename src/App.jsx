@@ -12,6 +12,7 @@ import SentenceBuildScreen from './screens/learning/types/SentenceBuildScreen';
 import PairMatchScreen from './screens/learning/types/PairMatchScreen';
 import ListeningScreen from './screens/learning/types/ListeningScreen';
 import ImageToTextScreen from './screens/learning/types/ImageToTextScreen';
+import FillBlankScreen from './screens/learning/types/FillBlankScreen';
 import PhoneFrame from './components/PhoneFrame';
 import ProfileCard from './components/ProfileCard';
 import DevTab from './components/dev/DevTab';
@@ -134,6 +135,18 @@ function App() {
             case 'imageToText':
                 return (
                     <ImageToTextScreen
+                        onBack={() => setCurrentScreen('dashboard')}
+                        onComplete={(isCorrect) => {
+                            console.log('Answer:', isCorrect ? 'Correct' : 'Wrong');
+                            // TODO: Navigate to next question
+                        }}
+                    />
+                );
+
+            // Learning - Fill in the Blank Question
+            case 'fillBlank':
+                return (
+                    <FillBlankScreen
                         onBack={() => setCurrentScreen('dashboard')}
                         onComplete={(isCorrect) => {
                             console.log('Answer:', isCorrect ? 'Correct' : 'Wrong');
