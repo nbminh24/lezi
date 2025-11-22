@@ -20,6 +20,7 @@ import RoleplayScreen from './screens/learning/types/RoleplayScreen';
 import VocabSpeakingScreen from './screens/learning/types/VocabSpeakingScreen';
 import RealWorldScreen from './screens/learning/types/RealWorldScreen';
 import LessonCompleteScreen from './screens/learning/LessonCompleteScreen';
+import LeaderboardScreen from './screens/leaderboard/LeaderboardScreen';
 import PhoneFrame from './components/PhoneFrame';
 import ProfileCard from './components/ProfileCard';
 import DevTab from './components/dev/DevTab';
@@ -77,6 +78,10 @@ function App() {
             // Map (Learning Path)
             case 'map':
                 return <MapScreen onNavigate={setCurrentScreen} />;
+
+            // Leaderboard
+            case 'rank':
+                return <LeaderboardScreen onNavigate={setCurrentScreen} />;
 
             // Learning - Image Select Question
             case 'imageSelect':

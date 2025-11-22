@@ -1,11 +1,12 @@
 import React from 'react';
-import { SignIn, UserPlus, House, NumberCircleOne, NumberCircleTwo, NumberCircleThree, Image, TextAa, TextAlignLeft, Shuffle, SpeakerHigh, ArrowsLeftRight, TextT, Keyboard, ChatCircleDots, CheckSquare, UsersThree, MicrophoneStage, Newspaper, Trophy } from 'phosphor-react';
+import { SignIn, UserPlus, House, NumberCircleOne, NumberCircleTwo, NumberCircleThree, Image, TextAa, TextAlignLeft, Shuffle, SpeakerHigh, ArrowsLeftRight, TextT, Keyboard, ChatCircleDots, CheckSquare, UsersThree, MicrophoneStage, Newspaper, Trophy, Medal } from 'phosphor-react';
 
 const DevTab = ({ currentScreen, onScreenChange }) => {
     const authScreens = [
         { id: 'login', label: 'Login', icon: SignIn },
         { id: 'signup', label: 'Signup', icon: UserPlus },
         { id: 'dashboard', label: 'Home', icon: House },
+        { id: 'rank', label: 'Leaderboard', icon: Medal },
     ];
 
     const onboardingScreens = [
