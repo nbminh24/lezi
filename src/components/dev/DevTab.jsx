@@ -1,5 +1,5 @@
 import React from 'react';
-import { SignIn, UserPlus, House, NumberCircleOne, NumberCircleTwo, NumberCircleThree, Image, TextAa, TextAlignLeft, Shuffle, SpeakerHigh, ArrowsLeftRight, TextT, Keyboard } from 'phosphor-react';
+import { SignIn, UserPlus, House, NumberCircleOne, NumberCircleTwo, NumberCircleThree, Image, TextAa, TextAlignLeft, Shuffle, SpeakerHigh, ArrowsLeftRight, TextT, Keyboard, ChatCircleDots } from 'phosphor-react';
 
 const DevTab = ({ currentScreen, onScreenChange }) => {
     const authScreens = [
@@ -23,6 +23,7 @@ const DevTab = ({ currentScreen, onScreenChange }) => {
         { id: 'imageToText', label: 'Q: Img→Txt', icon: ArrowsLeftRight },
         { id: 'fillBlank', label: 'Q: Fill', icon: TextT },
         { id: 'listeningType', label: 'Q: Type', icon: Keyboard },
+        { id: 'dialogue', label: 'Q: Chat', icon: ChatCircleDots },
     ];
 
     return (

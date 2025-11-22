@@ -14,6 +14,7 @@ import ListeningScreen from './screens/learning/types/ListeningScreen';
 import ImageToTextScreen from './screens/learning/types/ImageToTextScreen';
 import FillBlankScreen from './screens/learning/types/FillBlankScreen';
 import ListeningTypeScreen from './screens/learning/types/ListeningTypeScreen';
+import DialogueScreen from './screens/learning/types/DialogueScreen';
 import PhoneFrame from './components/PhoneFrame';
 import ProfileCard from './components/ProfileCard';
 import DevTab from './components/dev/DevTab';
@@ -160,6 +161,18 @@ function App() {
             case 'listeningType':
                 return (
                     <ListeningTypeScreen
+                        onBack={() => setCurrentScreen('dashboard')}
+                        onComplete={(isCorrect) => {
+                            console.log('Answer:', isCorrect ? 'Correct' : 'Wrong');
+                            // TODO: Navigate to next question
+                        }}
+                    />
+                );
+
+            // Learning - Dialogue Question
+            case 'dialogue':
+                return (
+                    <DialogueScreen
                         onBack={() => setCurrentScreen('dashboard')}
                         onComplete={(isCorrect) => {
                             console.log('Answer:', isCorrect ? 'Correct' : 'Wrong');
