@@ -9,6 +9,7 @@ import MapScreen from './screens/map/MapScreen';
 import ImageSelectScreen from './screens/learning/types/ImageSelectScreen';
 import TextChoiceScreen from './screens/learning/types/TextChoiceScreen';
 import SentenceBuildScreen from './screens/learning/types/SentenceBuildScreen';
+import PairMatchScreen from './screens/learning/types/PairMatchScreen';
 import PhoneFrame from './components/PhoneFrame';
 import ProfileCard from './components/ProfileCard';
 import DevTab from './components/dev/DevTab';
@@ -99,6 +100,18 @@ function App() {
                         onComplete={(isCorrect) => {
                             console.log('Answer:', isCorrect ? 'Correct' : 'Wrong');
                             // TODO: Navigate to feedback screen
+                        }}
+                    />
+                );
+
+            // Learning - Pair Match Question
+            case 'pairMatch':
+                return (
+                    <PairMatchScreen
+                        onBack={() => setCurrentScreen('dashboard')}
+                        onComplete={(isCorrect) => {
+                            console.log('All pairs matched!');
+                            // TODO: Navigate to next question
                         }}
                     />
                 );

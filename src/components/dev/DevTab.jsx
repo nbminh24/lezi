@@ -1,5 +1,5 @@
 import React from 'react';
-import { SignIn, UserPlus, House, NumberCircleOne, NumberCircleTwo, NumberCircleThree, Image, TextAa, TextAlignLeft } from 'phosphor-react';
+import { SignIn, UserPlus, House, NumberCircleOne, NumberCircleTwo, NumberCircleThree, Image, TextAa, TextAlignLeft, Shuffle } from 'phosphor-react';
 
 const DevTab = ({ currentScreen, onScreenChange }) => {
     const authScreens = [
@@ -18,6 +18,7 @@ const DevTab = ({ currentScreen, onScreenChange }) => {
         { id: 'imageSelect', label: 'Q: Image', icon: Image },
         { id: 'textChoice', label: 'Q: Text', icon: TextAa },
         { id: 'sentenceBuild', label: 'Q: Sentence', icon: TextAlignLeft },
+        { id: 'pairMatch', label: 'Q: Match', icon: Shuffle },
     ];
 
     return (
