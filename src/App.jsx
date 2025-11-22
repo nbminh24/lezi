@@ -6,6 +6,8 @@ import GoalScreen from './screens/onboarding/GoalScreen';
 import LevelScreen from './screens/onboarding/LevelScreen';
 import DashboardScreen from './screens/home/DashboardScreen';
 import MapScreen from './screens/map/MapScreen';
+import ImageSelectScreen from './screens/learning/types/ImageSelectScreen';
+import TextChoiceScreen from './screens/learning/types/TextChoiceScreen';
 import PhoneFrame from './components/PhoneFrame';
 import ProfileCard from './components/ProfileCard';
 import DevTab from './components/dev/DevTab';
@@ -63,6 +65,30 @@ function App() {
             // Map (Learning Path)
             case 'map':
                 return <MapScreen onNavigate={setCurrentScreen} />;
+
+            // Learning - Image Select Question
+            case 'imageSelect':
+                return (
+                    <ImageSelectScreen
+                        onBack={() => setCurrentScreen('dashboard')}
+                        onComplete={(isCorrect) => {
+                            console.log('Answer:', isCorrect ? 'Correct' : 'Wrong');
+                            // TODO: Navigate to feedback screen
+                        }}
+                    />
+                );
+
+            // Learning - Text Choice Question
+            case 'textChoice':
+                return (
+                    <TextChoiceScreen
+                        onBack={() => setCurrentScreen('dashboard')}
+                        onComplete={(isCorrect) => {
+                            console.log('Answer:', isCorrect ? 'Correct' : 'Wrong');
+                            // TODO: Navigate to feedback screen
+                        }}
+                    />
+                );
 
             // Profile (Old demo)
             case 'profile':
