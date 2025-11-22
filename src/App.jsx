@@ -5,6 +5,7 @@ import InterestScreen from './screens/onboarding/InterestScreen';
 import GoalScreen from './screens/onboarding/GoalScreen';
 import LevelScreen from './screens/onboarding/LevelScreen';
 import DashboardScreen from './screens/home/DashboardScreen';
+import MapScreen from './screens/map/MapScreen';
 import PhoneFrame from './components/PhoneFrame';
 import ProfileCard from './components/ProfileCard';
 import DevTab from './components/dev/DevTab';
@@ -57,7 +58,11 @@ function App() {
 
             // Dashboard (Home)
             case 'dashboard':
-                return <DashboardScreen />;
+                return <DashboardScreen onNavigate={setCurrentScreen} />;
+
+            // Map (Learning Path)
+            case 'map':
+                return <MapScreen onNavigate={setCurrentScreen} />;
 
             // Profile (Old demo)
             case 'profile':

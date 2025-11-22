@@ -5,7 +5,7 @@ import StreakStrip from './StreakStrip';
 import CurrentLessonCard from './CurrentLessonCard';
 import BottomNavBar from '../../components/layout/BottomNavBar';
 
-const DashboardScreen = () => {
+const DashboardScreen = ({ onNavigate }) => {
     const [activeTab, setActiveTab] = useState('home');
 
     const handleStartLesson = () => {
@@ -15,13 +15,15 @@ const DashboardScreen = () => {
 
     const handleViewPath = () => {
         console.log('Viewing learning path...');
-        // TODO: Navigate to map/path screen
+        onNavigate('map');
     };
 
     const handleTabChange = (tab) => {
         console.log('Navigating to:', tab);
         setActiveTab(tab);
-        // TODO: Implement actual navigation
+        if (onNavigate) {
+            onNavigate(tab);
+        }
     };
 
     return (
