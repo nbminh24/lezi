@@ -10,6 +10,8 @@ import ImageSelectScreen from './screens/learning/types/ImageSelectScreen';
 import TextChoiceScreen from './screens/learning/types/TextChoiceScreen';
 import SentenceBuildScreen from './screens/learning/types/SentenceBuildScreen';
 import PairMatchScreen from './screens/learning/types/PairMatchScreen';
+import ListeningScreen from './screens/learning/types/ListeningScreen';
+import ImageToTextScreen from './screens/learning/types/ImageToTextScreen';
 import PhoneFrame from './components/PhoneFrame';
 import ProfileCard from './components/ProfileCard';
 import DevTab from './components/dev/DevTab';
@@ -111,6 +113,30 @@ function App() {
                         onBack={() => setCurrentScreen('dashboard')}
                         onComplete={(isCorrect) => {
                             console.log('All pairs matched!');
+                            // TODO: Navigate to next question
+                        }}
+                    />
+                );
+
+            // Learning - Listening Question
+            case 'listening':
+                return (
+                    <ListeningScreen
+                        onBack={() => setCurrentScreen('dashboard')}
+                        onComplete={(isCorrect) => {
+                            console.log('Answer:', isCorrect ? 'Correct' : 'Wrong');
+                            // TODO: Navigate to next question
+                        }}
+                    />
+                );
+
+            // Learning - Image to Text Question
+            case 'imageToText':
+                return (
+                    <ImageToTextScreen
+                        onBack={() => setCurrentScreen('dashboard')}
+                        onComplete={(isCorrect) => {
+                            console.log('Answer:', isCorrect ? 'Correct' : 'Wrong');
                             // TODO: Navigate to next question
                         }}
                     />
