@@ -8,6 +8,7 @@ import DashboardScreen from './screens/home/DashboardScreen';
 import MapScreen from './screens/map/MapScreen';
 import ImageSelectScreen from './screens/learning/types/ImageSelectScreen';
 import TextChoiceScreen from './screens/learning/types/TextChoiceScreen';
+import SentenceBuildScreen from './screens/learning/types/SentenceBuildScreen';
 import PhoneFrame from './components/PhoneFrame';
 import ProfileCard from './components/ProfileCard';
 import DevTab from './components/dev/DevTab';
@@ -82,6 +83,18 @@ function App() {
             case 'textChoice':
                 return (
                     <TextChoiceScreen
+                        onBack={() => setCurrentScreen('dashboard')}
+                        onComplete={(isCorrect) => {
+                            console.log('Answer:', isCorrect ? 'Correct' : 'Wrong');
+                            // TODO: Navigate to feedback screen
+                        }}
+                    />
+                );
+
+            // Learning - Sentence Build Question
+            case 'sentenceBuild':
+                return (
+                    <SentenceBuildScreen
                         onBack={() => setCurrentScreen('dashboard')}
                         onComplete={(isCorrect) => {
                             console.log('Answer:', isCorrect ? 'Correct' : 'Wrong');
