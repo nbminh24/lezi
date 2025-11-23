@@ -90,10 +90,12 @@ const LeaderboardScreen = ({ onNavigate }) => {
 
                 {/* Rank List - 4+ */}
                 <RankList users={restOfList} mode={activeTab} startRank={4} />
-            </div>
 
-            {/* Sticky Rank (Current User) - FIXED */}
-            <StickyRank user={currentUser} rank={15} mode={activeTab} />
+                {/* Current User Row */}
+                <div className="mt-2">
+                    <StickyRank user={currentUser} rank={15} mode={activeTab} />
+                </div>
+            </div>
 
             {/* Bottom Navigation - FIXED */}
             <BottomNavBar activeTab="rank" onTabChange={onNavigate} />
