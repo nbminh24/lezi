@@ -22,6 +22,9 @@ import RealWorldScreen from './screens/learning/types/RealWorldScreen';
 import LessonCompleteScreen from './screens/learning/LessonCompleteScreen';
 import LeaderboardScreen from './screens/leaderboard/LeaderboardScreen';
 import ChatScreen from './screens/companion/ChatScreen';
+import ProfileScreen from './screens/profile/ProfileScreen';
+import AchievementsScreen from './screens/profile/AchievementsScreen';
+import SettingsScreen from './screens/profile/SettingsScreen';
 import PhoneFrame from './components/PhoneFrame';
 import ProfileCard from './components/ProfileCard';
 import DevTab from './components/dev/DevTab';
@@ -87,6 +90,18 @@ function App() {
             // Chat (Companion)
             case 'chat':
                 return <ChatScreen onNavigate={setCurrentScreen} />;
+
+            // Profile
+            case 'profile':
+                return <ProfileScreen onNavigate={setCurrentScreen} />;
+
+            // Achievements
+            case 'achievements':
+                return <AchievementsScreen onBack={() => setCurrentScreen('profile')} />;
+
+            // Settings
+            case 'settings':
+                return <SettingsScreen onBack={() => setCurrentScreen('profile')} />;
 
             // Learning - Image Select Question
             case 'imageSelect':
