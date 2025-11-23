@@ -21,6 +21,7 @@ import VocabSpeakingScreen from './screens/learning/types/VocabSpeakingScreen';
 import RealWorldScreen from './screens/learning/types/RealWorldScreen';
 import LessonCompleteScreen from './screens/learning/LessonCompleteScreen';
 import LeaderboardScreen from './screens/leaderboard/LeaderboardScreen';
+import ChatScreen from './screens/companion/ChatScreen';
 import PhoneFrame from './components/PhoneFrame';
 import ProfileCard from './components/ProfileCard';
 import DevTab from './components/dev/DevTab';
@@ -82,6 +83,10 @@ function App() {
             // Leaderboard
             case 'rank':
                 return <LeaderboardScreen onNavigate={setCurrentScreen} />;
+
+            // Chat (Companion)
+            case 'chat':
+                return <ChatScreen onNavigate={setCurrentScreen} />;
 
             // Learning - Image Select Question
             case 'imageSelect':

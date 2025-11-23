@@ -6,6 +6,7 @@ const DevTab = ({ currentScreen, onScreenChange }) => {
         { id: 'login', label: 'Login', icon: SignIn },
         { id: 'signup', label: 'Signup', icon: UserPlus },
         { id: 'dashboard', label: 'Home', icon: House },
+        { id: 'chat', label: 'Chat', icon: ChatCircleDots },
         { id: 'rank', label: 'Leaderboard', icon: Medal },
     ];
 

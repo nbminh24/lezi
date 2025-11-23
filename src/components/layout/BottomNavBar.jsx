@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapTrifold, Target, House, Trophy, User } from 'phosphor-react';
+import { MapTrifold, ChatCircleText, House, Trophy, User } from 'phosphor-react';
 
 const BottomNavBar = ({ activeTab = 'home', onTabChange }) => {
     const navItems = [
@@ -11,11 +11,11 @@ const BottomNavBar = ({ activeTab = 'home', onTabChange }) => {
             activeBg: 'bg-green-50'
         },
         {
-            id: 'arena',
-            label: 'Arena',
-            icon: Target,
-            activeColor: 'text-rose-500',
-            activeBg: 'bg-rose-50'
+            id: 'chat',
+            label: 'Chat',
+            icon: ChatCircleText,
+            activeColor: 'text-blue-500',
+            activeBg: 'bg-blue-50'
         },
         {
             id: 'home',
