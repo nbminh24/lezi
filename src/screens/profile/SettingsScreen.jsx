@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { ArrowLeft, SpeakerHigh, Vibrate, Bell, User, LockKey, Question, ShieldCheck, CaretRight } from 'phosphor-react';
 
-const SettingsScreen = ({ onBack }) => {
+const SettingsScreen = ({ onBack, onNavigate }) => {
     const [soundEffects, setSoundEffects] = useState(true);
     const [hapticFeedback, setHapticFeedback] = useState(true);
     const [dailyReminder, setDailyReminder] = useState(false);
 
     const handleNavigation = (screen) => {
-        console.log('Navigate to:', screen);
+        if (screen === 'editProfile' && onNavigate) {
+            onNavigate('editProfile');
+        } else {
+            console.log('Navigate to:', screen);
+        }
     };
 
     const handleDeleteAccount = () => {

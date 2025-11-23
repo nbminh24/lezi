@@ -25,6 +25,7 @@ import ChatScreen from './screens/companion/ChatScreen';
 import ProfileScreen from './screens/profile/ProfileScreen';
 import AchievementsScreen from './screens/profile/AchievementsScreen';
 import SettingsScreen from './screens/profile/SettingsScreen';
+import EditProfileScreen from './screens/profile/EditProfileScreen';
 import PhoneFrame from './components/PhoneFrame';
 import ProfileCard from './components/ProfileCard';
 import DevTab from './components/dev/DevTab';
@@ -101,7 +102,11 @@ function App() {
 
             // Settings
             case 'settings':
-                return <SettingsScreen onBack={() => setCurrentScreen('profile')} />;
+                return <SettingsScreen onBack={() => setCurrentScreen('profile')} onNavigate={setCurrentScreen} />;
+
+            // Edit Profile
+            case 'editProfile':
+                return <EditProfileScreen onBack={() => setCurrentScreen('settings')} onSave={() => setCurrentScreen('profile')} />;
 
             // Learning - Image Select Question
             case 'imageSelect':

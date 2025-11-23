@@ -5,12 +5,19 @@ const LessonCompleteScreen = ({ onContinue }) => {
     const [xp, setXp] = useState(0);
     const [accuracy, setAccuracy] = useState(0);
     const [showStreak, setShowStreak] = useState(false);
+    const [showBadge, setShowBadge] = useState(false);
 
     // Mock data
     const finalXP = 20;
     const finalAccuracy = 100;
     const timeSpent = '1:30';
     const currentStreak = 5;
+
+    // Mock new badge (set to null to hide)
+    const newBadge = {
+        title: 'Early Bird',
+        description: 'Completed a lesson before 8 AM'
+    };
 
     // Count-up animation
     useEffect(() => {
@@ -36,10 +43,18 @@ const LessonCompleteScreen = ({ onContinue }) => {
             });
         }, 30);
 
-        // Show streak after 1 second
+        // Show badge after 500ms
+        if (newBadge) {
+            setTimeout(() => {
+                setShowBadge(true);
+                console.log('🎵 Achievement Unlocked Sound Effect!');
+            }, 500);
+        }
+
+        // Show streak after 1.5 seconds
         setTimeout(() => {
             setShowStreak(true);
-        }, 1000);
+        }, 1500);
 
         return () => {
             clearInterval(xpInterval);
@@ -77,6 +92,60 @@ const LessonCompleteScreen = ({ onContinue }) => {
                         Great work! Keep it up! 🎉
                     </p>
                 </div>
+
+                {/* Achievement Unlocked Card */}
+                {newBadge && (
+                    <div className={`
+                        w-full max-w-md mb-6
+                        bg-gradient-to-br from-yellow-50 to-orange-50
+                        border-2 border-yellow-200 
+                        rounded-2xl 
+                        p-6
+                        shadow-xl shadow-yellow-200/50
+                        transition-all duration-500
+                        ${showBadge ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}
+                    `}>
+                        {/* Achievement Title */}
+                        <p className="text-xs font-black tracking-widest text-yellow-600 uppercase mb-4 text-center animate-pulse">
+                            ✨ ACHIEVEMENT UNLOCKED! ✨
+                        </p>
+
+                        {/* Badge Icon */}
+                        <div className="flex justify-center mb-4">
+                            <div className="relative animate-badge-pop">
+                                <img
+                                    src="/avatar.png"
+                                    alt={newBadge.title}
+                                    className="w-24 h-24 rounded-full border-[6px] border-yellow-400 shadow-xl"
+                                />
+                                {/* Sparkle effect */}
+                                <div className="absolute -top-2 -right-2 text-2xl animate-spin-slow">
+                                    ✨
+                                </div>
+                                <div className="absolute -bottom-2 -left-2 text-2xl animate-spin-slow" style={{ animationDelay: '1s' }}>
+                                    ⭐
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Badge Details */}
+                        <div className="text-center">
+                            <h3 className="text-xl font-black text-yellow-800 mb-1">
+                                {newBadge.title}
+                            </h3>
+                            <p className="text-sm text-yellow-700 font-medium">
+                                {newBadge.description}
+                            </p>
+                        </div>
+
+                        {/* Confetti decoration */}
+                        <div className="flex justify-center gap-2 mt-4 text-xl">
+                            <span className="animate-bounce" style={{ animationDelay: '0s' }}>🎉</span>
+                            <span className="animate-bounce" style={{ animationDelay: '0.1s' }}>🏆</span>
+                            <span className="animate-bounce" style={{ animationDelay: '0.2s' }}>🎊</span>
+                        </div>
+                    </div>
+                )}
 
                 {/* Stats Grid (Bento Style) */}
                 <div className="w-full max-w-md mb-6">
@@ -219,6 +288,27 @@ const LessonCompleteScreen = ({ onContinue }) => {
             opacity: 1;
           }
         }
+        @keyframes badge-pop {
+          0% { 
+            transform: scale(0) rotate(-180deg);
+            opacity: 0;
+          }
+          60% { 
+            transform: scale(1.3) rotate(20deg);
+          }
+          100% { 
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+          }
+        }
+        @keyframes spin-slow {
+          from { 
+            transform: rotate(0deg);
+          }
+          to { 
+            transform: rotate(360deg);
+          }
+        }
         .animate-bounce-slow {
           animation: bounce-slow 2s ease-in-out infinite;
         }
@@ -227,6 +317,12 @@ const LessonCompleteScreen = ({ onContinue }) => {
         }
         .animate-pop {
           animation: pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .animate-badge-pop {
+          animation: badge-pop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .animate-spin-slow {
+          animation: spin-slow 3s linear infinite;
         }
       `}</style>
         </div>
